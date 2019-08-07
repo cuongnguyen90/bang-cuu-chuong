@@ -7,26 +7,28 @@
 
         *{
             margin: auto;
+
         }
+
     </style>
 </head>
 <body onload="bangCuuChuong()">
-<div class="table">
-    <table id="table">
-
-    </table>
-</div>
 <script>
 
     function bangCuuChuong() {
-
+        row = "";
         for (i = 1 ; i <= 9 ; i++){
-            for (j = 1; j<=9;j++){
-                s = i*j;
-                _cot = "<tr><td>"+j+"x"+i+"="+s+"<\/td><\/tr>";
-                document.getElementById('table').innerHTML = _cot;
-            }
+            td = "";
+                for (j = 1; j<=9;j++){
+                    s = i*j;
+                    _c = "<td style='background: aqua;width: 80px;height: 20px;text-align: center;'>"+j+"x"+i+"="+s+"</td>";
+                    td = td + _c;
+
+                }
+            row = row + "<tr>"+td+"<\/tr>";
         }
+      document.write("<table style='margin: auto;border: 1px solid #ccc;background: beige'>"+row+"<\/table>");
+
     }
 
 
